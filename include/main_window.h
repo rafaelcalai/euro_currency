@@ -13,11 +13,14 @@ class MainWindow : public Window
 {
     private:
         static const int currency_size = 4;
-        const char *currencies_acronyms[currency_size] = {"EUR", "BRL", "GDB", "USD"};
+        const std::string currencies_acronyms[currency_size] = {"EUR", "BRL", "GBP", "USD"};
+        const std::string currencies_ratios[currency_size] = {"1.00", "5.31", "0.85", "1.12"};
         Grid grid;
-        Label curr_EUR, curr_USD, curr_BRL, curr_GDB;
-        Label ratio_EUR, ratio_USD, ratio_BRL, ratio_GDB;
-        Image flag_EUR, flag_USD, flag_BRL, flag_GDB;
+        Label currency[4];
+        Label ratio[4];
+        Image flag[4];
+
+        void add_data_to_window();
 
     public:
         MainWindow();
